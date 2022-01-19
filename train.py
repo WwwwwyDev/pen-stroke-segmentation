@@ -6,7 +6,7 @@ from dataset import FontSegDataset
 
 DATA_BASE_URL = "data/CCSSD/DATA_GB6763_SS/SS2017"
 MODEL_NAME = "mynet-DATA_GB6763_SS.pt"
-BATCH_SIZE = 1
+BATCH_SIZE = 16
 EPOCHS = 80
 IS_USE_GPU = True
 GPU_DEVICE = 0
