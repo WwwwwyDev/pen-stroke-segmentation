@@ -3,18 +3,12 @@ from torch import nn
 from models.mynet import mynet
 from dataset import FontSegDataset
 
-
-DATA_BASE_URL = "data/标准宋体"
-BATCH_SIZE = 16
-EPOCHS = 50
 IS_USE_GPU = True
 GPU_DEVICE = 0
-LEARNING_RATE = 0.0001
-MODEL_NAME = "mynet-%s-%depochs.pt"%(DATA_BASE_URL.split("/")[1],EPOCHS)
 
 if __name__ == '__main__':
-    TrainDataset = FontSegDataset(True, DATA_BASE_URL)
-    batch_size = BATCH_SIZE
+    TrainDataset = FontSegDataset(True, "data/标准宋体")
+    batch_size = 16
     # 定义数据集迭代器
     train_iter = torch.utils.data.DataLoader(
         TrainDataset, batch_size, shuffle=True, drop_last=True)
@@ -24,9 +18,9 @@ if __name__ == '__main__':
     print("2.网络定义成功")
     if not IS_USE_GPU:
         loss_function = nn.CrossEntropyLoss()
-        optimiser = torch.optim.Adam(net.parameters(), lr=LEARNING_RATE)
+        optimiser = torch.optim.Adam(net.parameters(), lr=0.0001)
         counter = 0   #计数器
-        epochs = EPOCHS
+        epochs = 300
         # train
         print("3.开始训练")
         for epoch in range(epochs):
@@ -40,14 +34,15 @@ if __name__ == '__main__':
                 counter += 1
                 if (counter % 100 == 0):
                     print("counter = ", counter, "loss = ", loss.item())
-            torch.save(net, 'checkpoint/'+MODEL_NAME)
+            if epoch != 0 and epoch % 50 == 0:
+                torch.save(net, 'checkpoint/losstest/'+"s-%depochs.pt"%epoch)
         print("训练结束")
     else:
         net = net.cuda(GPU_DEVICE)
         loss_function = nn.CrossEntropyLoss()
-        optimiser = torch.optim.Adam(net.parameters(), lr=LEARNING_RATE)
+        optimiser = torch.optim.Adam(net.parameters(), lr=0.0001)
         counter = 0   #计数器
-        epochs = EPOCHS
+        epochs = 300
         # train
         print("3.开始训练")
         for epoch in range(epochs):
@@ -61,5 +56,6 @@ if __name__ == '__main__':
                 counter += 1
                 if (counter % 100 == 0):
                     print("counter = ", counter, "loss = ", loss.item())
-            torch.save(net, 'checkpoint/'+MODEL_NAME)
+            if epoch != 0 and epoch % 50 == 0:
+                torch.save(net, 'checkpoint/losstest/'+"s-%depochs.pt"%epoch)
         print("训练结束")

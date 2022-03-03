@@ -21,7 +21,7 @@ def bilinear_kernel(in_channels, out_channels, kernel_size):
 class mynet(nn.Module):
     def __init__(self, num_classes):
         super(mynet, self).__init__()
-        pretrained_net = torchvision.models.resnet34(pretrained=True)
+        pretrained_net = torchvision.models.resnet34(pretrained=False)
         self.stage1 = list(pretrained_net.children())[:-5]  # 第一段
         self.stage1[0] = nn.Conv2d(1, 64, kernel_size=(
             7, 7), stride=(2, 2), padding=(3, 3), bias=False)
