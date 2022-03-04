@@ -4,7 +4,7 @@ import numpy as np
 import torch
 def read_font_images(font_dir, is_train=True):
     """读取所有font图像并标注。"""
-    txt_fname = os.path.join(font_dir, 'train.txt' if is_train else 'val.txt')
+    txt_fname = os.path.join(font_dir, '../train.txt' if is_train else '../val.txt')
     with open(txt_fname, 'r') as f:
         images = f.read().split()
     features, labels = [], []

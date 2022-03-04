@@ -10,6 +10,7 @@ if __name__ =="__main__":
             print(res)
             print(len(res))
         _, l = TrainDataset[i]
+        l = l.numpy()
         for x in range(288):
             for y in range(288):
                 res.add(l[x][y])

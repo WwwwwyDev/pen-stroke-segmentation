@@ -75,3 +75,9 @@ class mynet(nn.Module):
         s = self.upsample_2x(s1) 
         s = self.upsample_2x(s) 
         return s
+
+if __name__ == "__main__":
+    x = torch.tensor(np.zeros([1,1,288,288],dtype=float)).to(torch.float32)
+    print(x.shape)
+    net = mynet(35)
+    print(net(x).shape)
