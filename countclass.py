@@ -1,8 +1,8 @@
 from dataset import FontSegDataset
-DATA_BASE_URL = "data/标准宋体"
+DATA_BASE_URL = "data/方正卡通简体"
 
 if __name__ =="__main__":
-    TrainDataset = FontSegDataset(True, DATA_BASE_URL)
+    TrainDataset = FontSegDataset(False, DATA_BASE_URL)
     res = set()
     for i in range(len(TrainDataset)):
         if i % 100 == 0:

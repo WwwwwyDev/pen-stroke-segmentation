@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from models.unet import Unet
+from models.fcn import fcn
 from dataset import FontSegDataset
 import os
 
@@ -10,8 +10,7 @@ EPOCHS = 50
 IS_USE_GPU = True
 GPU_DEVICE = 0
 LEARNING_RATE = 0.0001
-MODEL_NAME = "unet-%s-%depochs.pt"%(DATA_BASE_URL.split("/")[1],EPOCHS)
-
+MODEL_NAME = "segnet-%s-%depochs.pt"%(DATA_BASE_URL.split("/")[1],EPOCHS)
 
 if(os.path.exists("checkpoint") == False):
     os.makedirs("checkpoint")
@@ -24,7 +23,7 @@ if __name__ == '__main__':
         TrainDataset, batch_size, shuffle=True, drop_last=True)
     print("1.数据集加载成功")
     # 定义网络
-    net = Unet(35)
+    net = fcn(35)
     print("2.网络定义成功")
     if not IS_USE_GPU:
         loss_function = nn.CrossEntropyLoss()
