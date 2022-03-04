@@ -34,7 +34,10 @@ if __name__ == '__main__':
                 counter += 1
                 if (counter % 100 == 0):
                     print("counter = ", counter, "loss = ", loss.item())
-            if epoch != 0 and epoch % 50 == 0:
+                if (counter % 10 == 0):
+                    with open("checkpoint/losstest/loss.txt","a") as file:
+                        file.write(loss.item()+",")
+            if (epoch+1) % 50 == 0:
                 torch.save(net, 'checkpoint/losstest/'+"s-%depochs.pt"%epoch)
         print("训练结束")
     else:
@@ -56,6 +59,9 @@ if __name__ == '__main__':
                 counter += 1
                 if (counter % 100 == 0):
                     print("counter = ", counter, "loss = ", loss.item())
-            if epoch != 0 and epoch % 50 == 0:
-                torch.save(net, 'checkpoint/losstest/'+"s-%depochs.pt"%epoch)
+                if (counter % 10 == 0):
+                    with open("checkpoint/losstest/loss.txt","a") as file:
+                        file.write(str(loss.item())+",")
+            if (epoch+1) % 50 == 0:
+                torch.save(net, 'checkpoint/losstest/'+"s-%depochs.pt"%(epoch+1))
         print("训练结束")
