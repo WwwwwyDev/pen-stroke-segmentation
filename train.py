@@ -7,7 +7,7 @@ import os
 
 DATA_BASE_URL = "data/标准宋体"
 BATCH_SIZE = 16
-EPOCHS = 50
+EPOCHS = 5
 IS_USE_GPU = True
 GPU_DEVICE = 0
 LEARNING_RATE = 0.0001

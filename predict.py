@@ -6,8 +6,8 @@ from models.mynet import mynet
 from dataset import FontSegDataset
 import matplotlib.pyplot as plt
 
-MODEL_PATH ="checkpoint/segnet-标准宋体-10epochs.pt"
-DATA_BASE_URL = "data/标准宋体"
+MODEL_PATH ="checkpoint/mynet-方正卡通简体-50epochs.pt"
+DATA_BASE_URL = "data/方正卡通简体"
 
 if __name__ == '__main__':
     net = torch.load(MODEL_PATH, map_location='cpu')

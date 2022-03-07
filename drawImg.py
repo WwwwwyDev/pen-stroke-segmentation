@@ -9,12 +9,12 @@ from models.segnet import SegNet
 from dataset import FontSegDataset
 import matplotlib.pyplot as plt
 
-MODEL_PATH ="checkpoint/segnet-标准宋体-10epochs.pt"
-DATA_BASE_URL = "data/标准宋体"
+MODEL_PATH ="checkpoint/mynet-方正兰亭黑-50epochs.pt"
+DATA_BASE_URL = "data/方正兰亭黑"
 
 if __name__ == '__main__':
     # idx = 2190
-    idx = 1500
+    idx = 0
     net = torch.load(MODEL_PATH, map_location='cpu')
     TestDataset = FontSegDataset(False, DATA_BASE_URL)
     X = TestDataset[idx][0].unsqueeze(0)

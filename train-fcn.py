@@ -10,7 +10,7 @@ EPOCHS = 50
 IS_USE_GPU = True
 GPU_DEVICE = 0
 LEARNING_RATE = 0.0001
-MODEL_NAME = "segnet-%s-%depochs.pt"%(DATA_BASE_URL.split("/")[1],EPOCHS)
+MODEL_NAME = "fcn-%s-%depochs.pt"%(DATA_BASE_URL.split("/")[1],EPOCHS)
 
 if(os.path.exists("checkpoint") == False):
     os.makedirs("checkpoint")
