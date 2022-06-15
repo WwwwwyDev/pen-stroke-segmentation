@@ -9,8 +9,8 @@ from models.segnet import SegNet
 from dataset import FontSegDataset
 import matplotlib.pyplot as plt
 
-MODEL_PATH ="checkpoint/mynet-方正兰亭黑-50epochs.pt"
-DATA_BASE_URL = "data/方正兰亭黑"
+MODEL_PATH ="checkpoint/mynet-标准宋体-50epochs.pt"
+DATA_BASE_URL = "data/标准宋体"
 
 if __name__ == '__main__':
     # idx = 2190
