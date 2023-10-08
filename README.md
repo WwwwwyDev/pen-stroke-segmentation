@@ -7,7 +7,7 @@
 [论文地址](https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDAUTO&filename=DLMY202205015&uniplatform=NZKPT&v=Iu5O7u8Ge54PiIWXii5d02_IbkDVWZxMQRpGIp3SHVmXw2wJesFn2Nt_2fo48rpD)
 
 #### 数据集
-[百度网盘](https://pan.baidu.com/s/12QURz6fRRANIFTNLjMpIog)  提取码: ultl 
+[百度网盘](https://pan.baidu.com/s/1ajN7HQkPbbPcmAuKJJXCNA?pwd=f7tU)  提取码: f7tU 
 
 #### 预训练模型
 
