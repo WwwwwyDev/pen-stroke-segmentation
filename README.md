@@ -1,4 +1,6 @@
-# pen-stroke-segmentation
+<p align="center">
+  <img src="https://socialify.git.ci/WwwwwyDev/pen-stroke-segmentation/image?language=1&name=1&owner=1&stargazers=1&theme=Light" alt="pen-stroke-segmentation" width="640" height="320" />
+</p>
 
 #### 介绍
 针对当前汉字笔画提取存在识别精度低和笔画分割不清等问题, 提出了一种辅助字体设计的汉字字体笔画分割模型. 该模型可对汉字图像进行有效的笔画分割。方法引入跳跃结构加强了笔画结构信息损失; 针对字体语义信息丢失的问题, 将模型中最大池化改为空洞卷积, 利用空洞卷积减少下采样的信息损失, 提升分割精度.
